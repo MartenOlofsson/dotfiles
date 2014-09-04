@@ -1,0 +1,65 @@
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore_global
+	pager = less -x2
+
+[push]
+	default = simple
+
+[user]
+	name = Marten Olofsson
+	email = marten.olofsson@valtech.se
+
+[alias]
+	st = status -s -b
+	co = checkout
+	ci = commit
+	br = branch
+  	pb = pull --rebase
+  	cp = cherry-pick -x
+	out = log origin/master..HEAD
+	hist = log --pretty=format:\"%C(yellow)%h %C(blue)%ad%C(reset) | %s %C(red)%d %C(blue)[%an]\" --decorate --date=iso
+	graph = log --pretty=format:\"%C(yellow)%h %C(blue)%ad%C(reset) | %s %C(red)%d %C(blue)[%an]\" --decorate --graph --date=iso
+	ll = log --pretty=format:\"%C(yellow)%h %C(blue)%ad%C(reset) | %s %C(red)%d %C(blue)[%an]\" --decorate --numstat
+	filelog = log -u
+	fl = log -u
+	listaliases = "!git config -l | grep alias | cut -c 7-"
+
+[color]
+	branch = auto
+  diff = auto
+	status = auto
+
+[color "branch"]
+	current = blue reverse
+	local = blue
+	remote = yellow
+
+[color "diff"]
+	meta = blue
+	frag = yellow
+	old = red
+	new = green
+
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[diff]
+	prompt = true
+	tool = bc3
+
+[difftool "bc3"]
+	prompt = true
+	path = C:/Program Files (x86)/Beyond Compare 3/BCompare.exe
+[merge]
+	tool = bc3
+[mergetool]
+	prompt = true
+	keepBackup = false
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+[mergetool "bc3"]
+	trustExitCode = true
