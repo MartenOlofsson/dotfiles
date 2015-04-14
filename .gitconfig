@@ -7,7 +7,7 @@
 	default = simple
 
 [user]
-	name = Marten Olofsson
+	name = Mårten Olofsson
 	email = martenolofsson@gmail.com
 
 [alias]
@@ -28,7 +28,7 @@
 
 [color]
 	branch = auto
-  diff = auto
+  	diff = auto
 	status = auto
 
 [color "branch"]
@@ -48,22 +48,13 @@
 	untracked = cyan
 
 [diff]
-	prompt = true
-	tool = bc3
+	
+	tool = bc4
 
-[difftool "bc3"]
-	prompt = true
-	path = C:/Program Files (x86)/Beyond Compare 3/BCompare.exe
+[difftool "bc4"]
+	
+	cmd = \"c:/program files (x86)/beyond compare 4/bcomp.exe\" \"$LOCAL\" \"$REMOTE\"
 [merge]
-	tool = bc3
-[mergetool]
-	prompt = true
-	keepBackup = false
-[mergetool "Kaleidoscope"]
-	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-	trustExitCode = true
-[mergetool "bc3"]
-	trustExitCode = true
-	
-	
-	
+	tool = bc4
+[mergetool "bc4"]
+	cmd = \"c:/program files (x86)/beyond compare 4/bcomp.exe\" \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
