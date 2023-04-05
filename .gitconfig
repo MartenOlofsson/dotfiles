@@ -5,6 +5,7 @@
 
 [push]
 	default = simple
+	autoSetupRemote = true
 
 [user]
 	name = Mårten Olofsson
@@ -46,15 +47,3 @@
 	added = yellow
 	changed = green
 	untracked = cyan
-
-[diff]
-	
-	tool = bc4
-
-[difftool "bc4"]
-	
-	cmd = \"c:/program files (x86)/beyond compare 4/bcomp.exe\" \"$LOCAL\" \"$REMOTE\"
-[merge]
-	tool = bc4
-[mergetool "bc4"]
-	cmd = \"c:/program files (x86)/beyond compare 4/bcomp.exe\" \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
