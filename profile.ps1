@@ -1,12 +1,11 @@
 using namespace System.Management.Automation
 using namespace System.Management.Automation.Language
 
-Import-Module z
 Import-Module -Name Terminal-Icons
-Import-Module Posh-Git
-$global:POSH_TRANSIENT=$false
-oh-my-posh --init --shell pwsh --config ~/jandedobbeleer.omp.json | Invoke-Expression
- 
+Import-Module posh-git
+oh-my-posh init pwsh | Invoke-Expression
+Set-PoshPrompt -Theme Paradox
+
 if ($host.Name -eq 'ConsoleHost')
 {
     Import-Module PSReadLine
